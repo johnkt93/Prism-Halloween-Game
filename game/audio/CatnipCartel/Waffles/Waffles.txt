@@ -1,0 +1,25 @@
+"Waffles" "So we've finally caught the sewer rat sneaking around our base."
+"I looked up to see a younger looking man on the second floor railing."
+"He leapt over the edge and landed on his feet."
+"Waffles" "We don't take kindly to those who jeopardize our operations."
+s "Look, I have no idea what you guys are doing here. I just need
+that key and I'll be on my way, and out of your hair."
+"Waffles" "A likely story!"
+"Waffles" "But unfortunately for you, that key is for Boss. And
+Boss has given the order to deal with you."
+s "Wait! But this is supposed to be a family-friendly game."
+"Waffles" "I was only going to challenge you to an arm-wrestling
+contest. I don't think Boss would approve of anything violent."
+s "Well then prepared to get your butt whooped!"
+"Waffles" "Great!"
+"He pounded his fist into an open palm, and tossed his neck making
+a loud cracking sound reverberate in the otherwise empty room"
+"Waffles" "Then let's get started."
+"Waffles" "But first {w} could you help me get to the table? I
+hurt my legs jumping down here."
+
+"Gabut" "Don't look at me, blame Waffles."
+n "Who's Waffles?"
+"Waffles" "Boss... I'm Waffles"
+n "Oh! Pfannkuchen! Why'd you change your name? Trying to sound tough?"
+"Waffles" "I'M NOT A PANCAKE!"

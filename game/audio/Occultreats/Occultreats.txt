@@ -1,0 +1,61 @@
+    A more prominent figure stepped out from the crowd.
+    """
+
+    "kknitro" "Are you Shiki?"
+
+    "I hesitated before responding."
+
+    s "Yes I am. What of it?"
+
+    "An indiscernible din erupted from the crowd."
+
+    "Another figure emerged from the crowd."
+
+    "Meateor" "Silence brothers and sisters."
+
+    "The crowd grew silent at his request."
+
+    "Meateor" "The time has come for you Shiki."
+
+    "He rose his arms into the air theatrically."
+
+    "The crowd once again burst with life at his motion."
+
+    "I've got a bad feeling about this. I have to get out of here."
+
+    "If I try to break through the crowd they'll definitely catch me, so I
+    had no choice but to go into the haunted mansion and find another exit
+    from there."
+
+    "I made a dash for the attraction's doors."
+
+    "kknitro" "After her! Do not let her get away."
+	
+	"We all made it out of the mansion in once piece."
+    "Before we could celebrate our victory, a voice called out."
+    "Meateor" "We knew you'd make it out of there eventually."
+    "kknitro" "Honestly, I bet against her. Didn't you also say we should find a way in and save her?"
+    "Meateor" "Brother Nitro, not in front of her."
+    "Meateor" "Shiki!"
+    "The man pulled down his hood. I recognized his face from my streams. It was none other than..."
+    "Meateor" "The time has come for you to atone for your sins!"
+    "Meateor" "You will answer for your crimes in front of all the Occultreats that you have slighted!"
+    "John" "Actually, I agreed with most of her tierlist"
+    "Meateor" "SILENCE BROTHER JOHN! What will the other members think if we let her get away with this. Do we need to send you back to Luto?"
+    "John" "Please don't! I just got my body back."
+    "Kknitro" "I actually also don't care one way or the other about her opinion. We all have our own beliefs."
+    "Meateor" "Yeah, but what about her hot takes? Are we going to let those slide?"
+    "Kknitro" "No, those were pretty out there. That she needs to repent for."
+    s "Well then I'm sorry guys."
+    "A smile began forming on their faces. A happy murmur could be heard from the crowd."
+    s "SORRY I'M BASED AND THAT YOU GUYS ARE WRONG!"
+    "Kknitro" "Alright, get her guys!"
+    s "You guys aren't the only one here you know."
+    "The other girls stood with me, as well as the Catnip Cartel, Yuragumis, and PenPals"
+    "Meateor" "Did you think that would be enough to take us all on?"
+	The Occultreats formed a huge crowd in front of us.
+    s "No, but we have a special technique."
+    "I took a deep breath."
+    s "Joestar Family secret technique {w} RUN AWAY!"
+    "We began running in different directions"
+    "Kknitro" "After them!"

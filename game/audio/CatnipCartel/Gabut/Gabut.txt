@@ -1,0 +1,16 @@
+"Gabut" "Hey! Don't touch that."
+"A voice yelled at me"
+"Gabut" "Boss will get angry with you if you mess with the storage."
+"Gabut" "Wait. I haven't seen you around before. You new here?"
+s "Uhh, you could say that."
+"Gabut" "Hmm."
+"He looked me up and down."
+"Gabut" "Aren't you kinda small to be doing work in the warehouse?"
+s "I'm just looking around. You know anything about the
+key for the control room."
+"Gabut" "Now that you mention it, I think I heard talk 
+about that in the mess hall. Go check in with our second in command
+then and he'll assign you to somewhere more, uhhh, fitting."
+
+
+"Gabut" "Don't look at me, blame Waffles."

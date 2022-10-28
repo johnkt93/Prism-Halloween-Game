@@ -1,0 +1,17 @@
+"For PenPals!"
+
+
+Attack-Normal
+"Hya!"
+
+Attack-Bash
+"That's going to leave a mark."
+
+Skill-Guard
+"Get behind me"
+
+Defend
+"My shield will protect me"
+
+Defeat (fatigued/exhausted)
+"Don't... give up."

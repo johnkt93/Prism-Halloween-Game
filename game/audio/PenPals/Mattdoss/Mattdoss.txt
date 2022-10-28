@@ -1,0 +1,18 @@
+"For Pina!"
+
+
+Attack-Normal
+"Take this!"
+
+Attack-Slice
+"Just a little off the top"
+
+Skill-Overdrive
+"Don't push me 'cuz I am close to the edge."
+(Reference to a scene from happy feet)
+
+Defend
+"Taking cover"
+
+Defeat (fatigued/exhausted)
+"I did... my best"

@@ -1,0 +1,10 @@
+Froze:
+	F "You good, Yura?"
+	Y "Yeah, I'm good"
+	Y "Oh Froze, I see that you're from Indonesia. Let me practice my bahasa on you."
+	Y "Uhhhhm... awa sudah makan. ah... saya belum makan. saya tak lapar, sudah?"
+	F "Then eat now"
+	Y "No, not yet. Almost done. Which means like in a few hours."
+	A "Froze says he loves you"
+	Y "Love you too!"
+	

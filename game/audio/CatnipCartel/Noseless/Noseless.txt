@@ -1,0 +1,30 @@
+"Off to the side was a man slumped over on the ground."
+"I shook the gate, and unsurprisingly it was locked."
+"Noseless" "HUH?! who goes there."
+"He wiped the drool off his face before rising to his feet."
+"Noseless" "Wait, who are you?"
+s "Uhhh, new recruit? Sent here to get the key and bring
+it to Boss."
+"He looked me up and down."
+"Noseless" "Yeah, I don't think so."
+"Noseless" "But that's above my paygrade so."
+"He pulled out a key from his pocket and unlocked the gates."
+"Noseless" "Here you go"
+s "Wait, just like that?"
+"Noseless" """
+Yeah, just like that.
+
+To be honest the second-in-command is bossier than Boss is.
+
+I'd rather just pretend that I'm doing something.
+
+It's why I was given guard duty.
+
+And between you and me. {w} I think our second-in-command
+is getting big for his britches since Boss likes him a little bit more
+than the rest of us.
+
+But, you didn't hear that from me.
+"""
+
+"Noseless" "Sorry, just doing my job."

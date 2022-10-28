@@ -1,0 +1,18 @@
+"For the Bioreactor!"
+
+
+Attack-Normal
+"Pew!"
+
+Attack-Unload
+"Laying down covering fire"
+
+Skill-Analysis
+"Kowalski, analysis"
+(Penguins of Madagascar reference)
+
+Defend
+"Hunkering down."
+
+Defeat (fatigued/exhausted)
+"Semper... fi."

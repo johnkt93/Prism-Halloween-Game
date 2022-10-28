@@ -1,0 +1,15 @@
+(Greeting) Hello! I am Hylo Ayane of CyberLive's 1st Generation. Have a royal good morning!
+
+Introduction Scene:
+(Slightly Panicked) Ah! You over there! How would you like the pleasure of aiding royalty? An honor normally reserved to the greatest knights of the kingdom.
+(Haughty) I assure you that as the princess of the Ayane family, saving me would be in your utmost interest.'
+(Normal) Thanks for saving me. I will give you the honor of being one of my vassals.
+(Exasperated) Why wouldn't you want to be my vassal? When I take over this plane you'll definitely get preferential treatment. You could become head maid if you work hard enough!
+(Peeved) Who are you calling a child?! I am Ayane Hylo, of the Royal dragon family! For 3000 years have I held this title and this right!
+(Smug) You are but a young pup to me! Come back in a few centuries and maybe then you'll see how regal I truly am.
+(Panicked) W-wait! Don't just leave me behind!
+
+Miscellaneous Lines:
+(Excited) Ooooh!!!
+(Disgusted) Gross.
+(Neutral) You've asked for me to grace your presence?
