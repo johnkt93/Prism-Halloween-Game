@@ -13,7 +13,7 @@ default Rei_in_party = False
 default Wall_in_party = False
 default screen = None
 
-label iku_dungeon:
+label iku_dungeon_script:
     "As you open the door, you feel some resistance and hear the sound of fungal tendrils snapping."
     "The ground beneath you uneven, and though you try your best to keep your footing, you slip while going down a slope and start picking up speed"
     "As you try to slow down your descent, you see someone peeking out from behind some tall sunflowers"
@@ -77,6 +77,7 @@ label cell_door:
     else:
         "The door is shut tight. Rattling the bars does nothing for you"
         return
+
 label cell_nolia:
     if Nolia_Needs_Water == False:
         "In the corner of the cell, you find what looks to be a shriveled wooden ball"
@@ -92,14 +93,15 @@ label water_menu:
             "It doesn't seem to do much, until you see it moving"
             "Taking a step back, it begins to rise"
 #           show nolia_sapling_sprite
-        "It turns around, and does what you can only assume to be stretching"
-        "?" "Ah, thanks for that"
-        "It wobbles around the cell, before sitting back down"
-        "?" "It's been so long since someone came by, I thought I would be a fossil when someone found me"
-        call nolia_sapling_menu
-        return
+            "It turns around, and does what you can only assume to be stretching"
+            "?" "Ah, thanks for that"
+            "It wobbles around the cell, before sitting back down"
+            "?" "It's been so long since someone came by, I thought I would be a fossil when someone found me"
+            call nolia_sapling_menu
+            return
         "Do nothing":
             return
+
 label nolia_sapling_menu:
     menu:
         "Ask her name" if petal_name == False:
@@ -142,32 +144,34 @@ label nolia_sapling_menu:
             "Petal" "Maybe something is in the mush?"
             $ nolia_hint = True
             return
+
 label dog_bowl:
     "It's a plastic bowl with some brown mush. It doesn't smell like much, but it looks unappetizing"
-    menu if nolia_hint == True:
-        "Take a bite?"
-        "Yes" if food_count == 0:
-            "Your stomach rumbles"
-            "You have no idea when food will come again, so you take a bite"
-            "And immediately spit it back out"
-            s scared "Oh God, this is disgusting! Its so mushy"
-            $ food_count += 1
-            jump dog_bowl
-        "Continue eating" if food_count == 1:
-            "You continue shoveling the goop into your mouth, struggling to swallow and keep the vile concoction down"
-            $ food_count += 1
-            jump dog_bowl
-        "Continue eating" if food_count == 2:
-            "Eventually, you bite into something solid"
-            "You pull a small metal key from your mouth"
-            s scared "Oh thank God!"
-            s scared "I thought I was going to pass out from how terrible that was"
-            "Petal" "Why didn't you just dig through the bowl, I don't think you had to eat anything"
-            s scared "..."
-            "You quickly go to unlock the cell doors"
-            return
-        "No":
-            return
+    if nolia_hint == True:
+        menu:
+            "Take a bite?"
+            "Yes" if food_count == 0:
+                "Your stomach rumbles"
+                "You have no idea when food will come again, so you take a bite"
+                "And immediately spit it back out"
+                s scared "Oh God, this is disgusting! Its so mushy"
+                $ food_count += 1
+                jump dog_bowl
+            "Continue eating" if food_count == 1:
+                "You continue shoveling the goop into your mouth, struggling to swallow and keep the vile concoction down"
+                $ food_count += 1
+                jump dog_bowl
+            "Continue eating" if food_count == 2:
+                "Eventually, you bite into something solid"
+                "You pull a small metal key from your mouth"
+                s scared "Oh thank God!"
+                s scared "I thought I was going to pass out from how terrible that was"
+                "Petal" "Why didn't you just dig through the bowl, I don't think you had to eat anything"
+                s scared "..."
+                "You quickly go to unlock the cell doors"
+                return
+            "No":
+                return
 
 label wetty_encounter:
     "Petal" "Not to alarm you Shiki but I think we're being followed. Just don't look behi-"
@@ -191,14 +195,18 @@ label Wetty:
             $ wetty = "poke"
             pass
     "Taking your chance, you [wetty] it."
+    voice "audio/Ikumin/WetFloor/Wetty1.wav"
     "Wetty" "AAAHHHHHH"
     "The blue blob screams out, and emerges from the bushes."
+    voice "audio/Ikumin/WetFloor/Wetty2.wav"
     "Wetty" "What was that for?!"
     "In front of you seems to be some sort of slime creature that seems to be constantly melting."
     s scared "Sorry!"
     s scared "I didn't know what it was-"
+    voice "audio/Ikumin/WetFloor/Wetty3.wav"
     "Wetty" "{b}SO YOU JUST HIT ME?!{/b}"
     s scared "I didn't mean to!"
+    voice "audio/Ikumin/WetFloor/Wetty4.wav"
     "Wetty" "Wait"
     "The blob regains her composure and looks you up and down"
     "Wetty" "You're the dog that was talking to Hime earlier."
@@ -218,7 +226,7 @@ label Wetty:
     "She jumps up in joy at the mention of Iku's name"
     s "Well, I think she is being held captive. Do you think you could help me save her?"
     "Wetty" "As if you had to ask! We should find the other Ikumin"
-    renpy.notify("Wetty has joined your party")
+    $ renpy.notify("Wetty has joined your party")
     $ Wetty_in_party = True
     return
 
@@ -267,7 +275,7 @@ label Rei_Jailed:
         "Wetty" "I want to beat up the mushrooms so Hime will praise me!"
         "Rei" "Hime already praises you Wetty"
         "Wetty" "Well...{w} I want more"
-        renpy.notify("Rei has joined your party")
+        $ renpy.notify("Rei has joined your party")
         $ Rei_in_party = True
         return
     else:
@@ -277,19 +285,11 @@ label Rei_Jailed:
 label Wall_jailed:
     "While searching for the last Sunflower, you come across an empty cell"
     "Searching the cell, all you can find is a letter"
-    frame:
-        has vbox:
-            centered """
-            Eh Jo, wenn ihr das hier lesen könnt, haben mich die penner in ne neue zelle gebraucht... die Pisser.
-
-            Ich hab ne paar sachen da gelassen damit ihr ihr mich findet könnt.
-
-            Null ahnung ob die Pilze englisch können also schreib ich einfach in Deutsch
-
-            Ich glaube an euch Sonnenblumen! Viel Glück
-            """
+    centered """
+    Eh Jo, wenn ihr das hier lesen könnt, haben mich die penner in ne neue zelle gebraucht... die Pisser.\n    Ich hab ne paar sachen da gelassen damit ihr ihr mich findet könnt.\n    Null ahnung ob die Pilze englisch können also schreib ich einfach in Deutsch\n    Ich glaube an euch Sonnenblumen! Viel Glück
+    """
     "Attached to the back of the letter is a key"
-    renpy.notify("You have found a cell key")
+    $ renpy.notify("You have found a cell key")
     $ rei_key_in_inventory = True
     "You have no idea what the letter says, so you stash it away"
     return
@@ -308,7 +308,7 @@ label Wall_found:
     "Wall shoots a glare at Rei"
     "Wetty" "No, we haven't found her yet, but there's probably only a few more places to check"
     "Wall" "Then let's go! No point in wasting time here"
-    renpy.notify("Wall has joined your party")
+    $ renpy.notify("Wall has joined your party")
     $ Wall_in_party = True
     return
 
@@ -320,7 +320,7 @@ label nolia_drrdrrdrr:
     "Petal" "I dont think so. I can feel it! This is my hole! This is the hole that was meant for me!"
     "Petal" "Yawns"
     "Petal" "I haven't felt so relaxed in a long while. I'll catch up with you after a short nap."
-    renpy.notify("Petal has left your party")
+    $ renpy.notify("Petal has left your party")
     return
     
 label nolia_tree:
@@ -397,12 +397,14 @@ label iku_saved:
     "Nolia" "Buh-bye! Feel free to visit!"
     return
 
-label party_menu:
+label iku_party_menu:
     menu:
         "Speak with Hylo":
             call iku_hylo_menu
+            jump iku_party_menu
         "Speak with Petal":
             call nolia_noises
+            jump iku_party_menu
         "Return":
             return
 
