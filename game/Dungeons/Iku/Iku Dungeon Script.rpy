@@ -12,10 +12,12 @@ default Wetty_in_party = False
 default Rei_in_party = False
 default Wall_in_party = False
 default screen = None
+default location = "cell"
 
 label iku_dungeon_script:
+    background "black"
     "As you open the door, you feel some resistance and hear the sound of fungal tendrils snapping."
-    "The ground beneath you uneven, and though you try your best to keep your footing, you slip while going down a slope and start picking up speed"
+    "The ground beneath you is uneven, and though you try your best to keep your footing, you slip while going down a slope and start picking up speed"
     "As you try to slow down your descent, you see someone peeking out from behind some tall sunflowers"
     "You are almost certainly going to hit her at this rate"
 
@@ -64,7 +66,18 @@ label iku_dungeon_script:
     s scared "Senpai wait, what's going on?!"
     "Without saying another word, she leaves you alone in the cell"
 #   call the platformer code here
-
+#label interaction_menu:
+#    if location == "cell_door":
+#        call cell_door
+#        return
+#    elif location == "cell_nolia":
+#        call cell_nolia
+#        return
+#    elif location == "dog_bowl":
+#        call dog_bowl
+#        return
+#    else:
+#        return
 label cell_door:
     if cell_key_in_inventory == True:
         "The door is shut tight. Rattling the bars does nothing for you"
@@ -85,6 +98,7 @@ label cell_nolia:
         "?" "Wa-er"
         $ Nolia_Needs_Water = True
         call water_menu
+        return
 
 label water_menu:
     menu:
@@ -169,9 +183,12 @@ label dog_bowl:
                 "Petal" "Why didn't you just dig through the bowl, I don't think you had to eat anything"
                 s scared "..."
                 "You quickly go to unlock the cell doors"
+                $ Nolia_in_party = True
                 return
             "No":
                 return
+    else:
+        return
 
 label wetty_encounter:
     "Petal" "Not to alarm you Shiki but I think we're being followed. Just don't look behi-"
@@ -402,7 +419,7 @@ label iku_party_menu:
         "Speak with Hylo":
             call iku_hylo_menu
             jump iku_party_menu
-        "Speak with Petal":
+        "Speak with Petal" if Nolia_in_party == True:
             call nolia_noises
             jump iku_party_menu
         "Return":

@@ -34,7 +34,6 @@ default inventory_rope = False
 default inventory_box = False
 default inventory_plushie = False
 default gottem = False
-default location = "Space"
 default hint_given = 0
 default code = ""
 default time_to_cheer_up_pina = False

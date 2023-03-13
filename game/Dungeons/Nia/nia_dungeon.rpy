@@ -311,4 +311,30 @@ label waffles_fight:
     "I shook her aggressively."
     n "Huh, is it time for food?"
     n "Oh, Shiki. I had the weirdest dream about the Catnip Cartel. You were there!"
+
+    play music "shiki_bgm.wav"
+    scene image "Backgrounds/hub.jpg"
+    h "Well, well. Look who's finally awake!"
+    h "Had a nice rest, princess?"
+    s "I don't even remember falling asleep. I just went to lie down next to Nia, and then I was out like a light."
+    h "Ex-cuses!"
+    h "Did you expect me to do all the work while you rest your lazy bones?"
+    s @ scared "I mean it'd help if did something other than bark orders at me."
+    h "You think I'm only ordering you around?"
+    h "My dear, as my retainer I'm offering you something kingdoms have risen and fallen over."
+    s "And what would that be?"
+    h """
+    That would be the pact with a dragon of course!
+
+    Do you know how much evil magic is being held at bay just by having me around?
+
+    Do you know how scared those creepy crawlies in the dark are to approach you?
+
+    Be lucky I'm not charging you for this service!
+    """
+
+    s @ happy "You know I do feel a bit luckier recently. I suppose it was wrong of me to accuse you of doing nothing. I apologize."
+    h "Heh. Sucker."
+    
+
     jump escape_hub

@@ -16,9 +16,7 @@ image shiki_animated = ConditionSwitch(
     "animation == 'shiki_walk_left'", "Shiki_Walk_Left",
     "animation == 'shiki_idle_right'", "Shiki_Idle_Right",
     "animation == 'shiki_walk_right'", "Shiki_Walk_Right",
-    "animation == 'shiki_climb'", "Shiki_Climb",
-)
-
+    "animation == 'shiki_climb'", "Shiki_Climb")
 image Shiki_Idle_Left:
     "Iku_Dungeon/Shiki Idle Left/ShikiIdleLeft1.png"
     pause 0.1
@@ -51,15 +49,12 @@ image Shiki_Idle_Left:
     "Iku_Dungeon/Shiki Idle Left/ShikiIdleLeft15.png"
     pause 0.1
     repeat
-
 image Shiki_Walk_Left = ConditionSwitch(
     "frame_count == 1","Iku_Dungeon/Shiki Walk Left/ShikiWalkLeft1.png",
     "frame_count == 2","Iku_Dungeon/Shiki Walk Left/ShikiWalkLeft2.png",
     "frame_count == 3","Iku_Dungeon/Shiki Walk Left/ShikiWalkLeft3.png",
     "frame_count == 4","Iku_Dungeon/Shiki Walk Left/ShikiWalkLeft4.png",
-    "True", "Shiki_Idle_Left"
-)
-
+    "True", "Shiki_Idle_Left")
 image Shiki_Idle_Right:
     "Iku_Dungeon/Shiki Idle Right/ShikiIdleRight1.png"
     pause 0.1
@@ -92,15 +87,12 @@ image Shiki_Idle_Right:
     "Iku_Dungeon/Shiki Idle Right/ShikiIdleRight15.png"
     pause 0.1
     repeat
-
 image Shiki_Walk_Right = ConditionSwitch(
     "frame_count == 1","Iku_Dungeon/Shiki Walk Right/ShikiWalkRight1.png",
     "frame_count == 2","Iku_Dungeon/Shiki Walk Right/ShikiWalkRight2.png",
     "frame_count == 3","Iku_Dungeon/Shiki Walk Right/ShikiWalkRight3.png",
     "frame_count == 4","Iku_Dungeon/Shiki Walk Right/ShikiWalkRight4.png",
-    "True", "Shiki_Idle_Right"
-)
-
+    "True", "Shiki_Idle_Right")
 image Shiki_Climb = ConditionSwitch(
     "climb_count == 1", "Iku_Dungeon/Shiki Climb/ShikiClimb1.png",
     "climb_count == 2", "Iku_Dungeon/Shiki Climb/ShikiClimb2.png",
@@ -111,14 +103,12 @@ image Shiki_Climb = ConditionSwitch(
     "climb_count == 7", "Iku_Dungeon/Shiki Climb/ShikiClimb7.png",
     "climb_count == 8", "Iku_Dungeon/Shiki Climb/ShikiClimb8.png",
     "climb_count == 9", "Iku_Dungeon/Shiki Climb/ShikiClimb9.png",
-    "True", "Iku_Dungeon/Shiki Climb/ShikiClimb1.png"
-)
-
+    "True", "Iku_Dungeon/Shiki Climb/ShikiClimb1.png")
 image 1-1:
     "Iku_Dungeon/Dungeon Map/1-1.png"
 
 screen iku_dungeon():
-    zorder -1
+    zorder -10
     modal False
     key "K_UP" action Return("u")
     key "repeat_K_UP" action Return("u")
@@ -129,11 +119,12 @@ screen iku_dungeon():
     key "K_RIGHT" action Return("r")
     key "repeat_K_RIGHT" action Return("rr")
     key "K_z" action Return("z")
-  
+    key "K_x" action Return("x")
+
     add "Iku_Dungeon/Dungeon Map/1-1.png" anchor(0,0) pos (xpos1, ypos1)
 
 screen one_one_jail():
-    zorder 10
+    zorder -5
     add "Iku_Dungeon/Dungeon map/JailCell.png" anchor(0, 0) pos (xpos1, ypos1+740)
     showif cell_door_locked == True:
         add "Iku_Dungeon/Dungeon map/JailCellDoor.png" anchor(0, 0) pos (xpos1, ypos1+740)
@@ -146,7 +137,7 @@ label iku_dungeon:
     $ shiki_xpos1 = 0
     $ shiki_ypos1 = 1120
     show screen iku_dungeon
-#    show screen one_one_jail
+    show screen one_one_jail
     show shiki_animated onlayer screens:
             xpos xpos1+shiki_xpos1
             ypos ypos1+shiki_ypos1
@@ -164,6 +155,18 @@ label iku_dungeon:
             $ climb_count = 0
         elif climb_count < 1:
             $ climb_count = 9
+        if shiki_xpos1 > 200:
+            $ location = "Nowhere"
+            pass
+        elif shiki_xpos1 >= 140:
+            $ location = "cell_door"
+            pass
+        elif shiki_xpos1 >= 40:
+            $ location = "dog_bowl"
+            pass
+        elif shiki_xpos1 >= -60:
+            $ location = "nolia_cell"
+            pass
         if res == "l":
             $ animation = "shiki_idle_left"
             $ frame_count = 0
@@ -171,9 +174,9 @@ label iku_dungeon:
         elif res == "lr":
             $ animation = "shiki_walk_left"
             $frame_count += 1
-            if shiki_xpos1 >= 0:
+            if shiki_xpos1 >= -40:
                 $ shiki_xpos1 -= 20
-            if xpos1 <0:
+            if xpos1 <0 and shiki_xpos1 <= 1800:
                 $ xpos1 += 20
             pause 0.1
             pass
@@ -185,11 +188,12 @@ label iku_dungeon:
             $ animation = "shiki_walk_right"
             $ frame_count += 1
             pause 0.1
-#            while cell_door_locked == True:
-#                if x_pos1 
+            if cell_door_locked == True:
+                if shiki_xpos1 >= 180:
+                    $ shiki_xpos1 = 180
             if shiki_xpos1 <=2320:
                 $ shiki_xpos1 += 20
-            if xpos1 >-1280:
+            if xpos1 >-1280 and shiki_xpos1 >= 500:
                 $ xpos1 -= 20
                 pass
         elif res == "u":
@@ -203,12 +207,15 @@ label iku_dungeon:
         elif res == "d":
             $ animation = "shiki_climb"
             $ climb_count -= 1
-            if shiki_ypos1 < 1180:
+            if shiki_ypos1 < 1120:
                 $ shiki_ypos1 += 20
             if ypos1 > -720:
                 $ ypos1 -= 20
             pass
-        elif res  == "z":
+        #elif res == "z":
+        #    call interaction_menu
+        #    pass
+        elif res  == "x":
             call iku_party_menu
             pass
         pause 0.1
